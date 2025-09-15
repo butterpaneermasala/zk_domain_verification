@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "iconv-lite": "^0.7.0",
-    "mailparser": "^3.7.4",
-    "quoted-printable": "^1.0.1"
-  }
-}

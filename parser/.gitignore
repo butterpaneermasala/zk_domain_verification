@@ -1,4 +1,5 @@
 ./node_modeules
 node_modeules
+package-lock.json
 ./dist
 ./.env
