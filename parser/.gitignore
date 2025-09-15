@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 ./node_modeules
 node_modeules
+=======
+./node_modules
+node_modules
+>>>>>>> 7283d34 (hi)
 package-lock.json
 ./dist
 ./.env
