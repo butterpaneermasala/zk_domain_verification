@@ -1,1 +1,2 @@
+chmod +x parser.js
  ./parser.js original_msg.eml 
