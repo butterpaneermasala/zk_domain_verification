@@ -73,6 +73,10 @@ Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building wit
 
 To know more about its features, check out our [website](https://scaffoldeth.io).
 
+## Email domain verification
+
+This repo includes a minimal email domain verification flow (headers + ZK + optional on-chain). See `README-EMAIL.md` for the end-to-end guide.
+
 ## Contributing to Scaffold-ETH 2
 
 We welcome contributions to Scaffold-ETH 2!

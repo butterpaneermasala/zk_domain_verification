@@ -1,25 +1,32 @@
-import "@rainbow-me/rainbowkit/styles.css";
-import "@scaffold-ui/components/styles.css";
-import { ScaffoldEthAppWithProviders } from "~~/components/ScaffoldEthAppWithProviders";
-import { ThemeProvider } from "~~/components/ThemeProvider";
+import { AppProviders } from "../components/AppProviders";
 import "~~/styles/globals.css";
-import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
-export const metadata = getMetadata({
-  title: "Scaffold-ETH 2 App",
-  description: "Built with 🏗 Scaffold-ETH 2",
-});
+export const metadata = {
+  title: "Email Domain Verifier",
+  description: "Headers-only DKIM + minimal ZK + optional on-chain badge",
+};
 
-const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html suppressHydrationWarning className={``}>
+    <html data-theme="light" suppressHydrationWarning>
       <body>
-        <ThemeProvider enableSystem>
-          <ScaffoldEthAppWithProviders>{children}</ScaffoldEthAppWithProviders>
-        </ThemeProvider>
+        <AppProviders>
+          <div className="min-h-screen flex flex-col">
+            <header className="sticky top-0 z-20 bg-base-100 border-b-4 border-base-content p-3">
+              <div className="container mx-auto max-w-5xl flex items-center justify-between">
+                <div className="font-extrabold text-xl tracking-tight uppercase">Email Domain Verifier</div>
+                <div className="text-xs opacity-60">ZK login · no wallet</div>
+              </div>
+            </header>
+            <main className="flex-1">{children}</main>
+            <footer className="bg-base-100 border-t-4 border-base-content p-3">
+              <div className="container mx-auto max-w-5xl text-xs">
+                <span className="font-semibold">Privacy-first</span> · Headers-only DKIM · Minimal ZK · Optional mint
+              </div>
+            </footer>
+          </div>
+        </AppProviders>
       </body>
     </html>
   );
-};
-
-export default ScaffoldEthApp;
+}

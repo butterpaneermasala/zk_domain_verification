@@ -18,50 +18,52 @@
 @plugin "daisyui/theme" {
   name: "light";
 
-  --color-primary: #93bbfb;
-  --color-primary-content: #212638;
-  --color-secondary: #dae8ff;
-  --color-secondary-content: #212638;
-  --color-accent: #93bbfb;
-  --color-accent-content: #212638;
-  --color-neutral: #212638;
+  /* Neo-brutalism inspired light theme (bold but light background) */
+  --color-primary: #ffdd33;            /* punchy yellow */
+  --color-primary-content: #0b0b0b;    /* near-black text */
+  --color-secondary: #ff6b6b;          /* coral */
+  --color-secondary-content: #0b0b0b;
+  --color-accent: #6ee7b7;             /* mint */
+  --color-accent-content: #0b0b0b;
+  --color-neutral: #111111;            /* hard black for borders */
   --color-neutral-content: #ffffff;
-  --color-base-100: #ffffff;
-  --color-base-200: #f4f8ff;
-  --color-base-300: #dae8ff;
-  --color-base-content: #212638;
-  --color-info: #93bbfb;
-  --color-success: #34eeb6;
-  --color-warning: #ffcf72;
-  --color-error: #ff8863;
+  --color-base-100: #f7f7f2;           /* soft off-white background */
+  --color-base-200: #efefe9;           /* light card bg */
+  --color-base-300: #e5e5de;           /* lines */
+  --color-base-content: #111111;       /* main text */
+  --color-info: #60a5fa;               /* blue-400 */
+  --color-success: #22c55e;            /* green-500 */
+  --color-warning: #f59e0b;            /* amber-500 */
+  --color-error: #ef4444;              /* red-500 */
 
-  --radius-field: 9999rem;
-  --radius-box: 1rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;                  /* square corners */
   --tt-tailw: 6px;
 }
 
 @plugin "daisyui/theme" {
   name: "dark";
 
-  --color-primary: #212638;
-  --color-primary-content: #f9fbff;
-  --color-secondary: #323f61;
-  --color-secondary-content: #f9fbff;
-  --color-accent: #4969a6;
-  --color-accent-content: #f9fbff;
-  --color-neutral: #f9fbff;
-  --color-neutral-content: #385183;
-  --color-base-100: #385183;
-  --color-base-200: #2a3655;
-  --color-base-300: #212638;
-  --color-base-content: #f9fbff;
-  --color-info: #385183;
-  --color-success: #34eeb6;
-  --color-warning: #ffcf72;
-  --color-error: #ff8863;
+  /* Softer dark with brutal accents */
+  --color-primary: #fde047;            /* yellow-300 */
+  --color-primary-content: #111111;
+  --color-secondary: #fb7185;          /* rose-400 */
+  --color-secondary-content: #111111;
+  --color-accent: #86efac;             /* green-300 */
+  --color-accent-content: #111111;
+  --color-neutral: #f1f5f9;            /* slate-100 */
+  --color-neutral-content: #111111;
+  --color-base-100: #0f172a;           /* deep slate */
+  --color-base-200: #111827;
+  --color-base-300: #1f2937;
+  --color-base-content: #f8fafc;
+  --color-info: #93c5fd;               /* blue-300 */
+  --color-success: #86efac;            /* green-300 */
+  --color-warning: #fde68a;            /* amber-200 */
+  --color-error: #fca5a5;              /* red-300 */
 
-  --radius-field: 9999rem;
-  --radius-box: 1rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
 
   --tt-tailw: 6px;
   --tt-bg: var(--color-primary);
@@ -107,11 +109,41 @@
 }
 
 .btn {
-  @apply shadow-md;
+  /* Neo-brutalist buttons: thick border, offset shadow */
+  border-width: 3px;
+  border-color: var(--color-base-content);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 0 var(--color-base-content);
+  transition: transform 80ms ease-out, box-shadow 80ms ease-out;
 }
 
 .btn.btn-ghost {
   @apply shadow-none;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 0 var(--color-base-content);
+}
+
+.input, .textarea, .select {
+  border-width: 3px;
+  border-color: var(--color-base-content);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 0 var(--color-base-300);
+}
+
+.alert, .badge {
+  border-width: 3px;
+  border-color: var(--color-base-content);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 0 var(--color-base-300);
+}
+
+.card {
+  border: 3px solid var(--color-base-content);
+  border-radius: 0;
+  box-shadow: 8px 8px 0 0 var(--color-base-content);
 }
 
 .link {
